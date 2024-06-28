@@ -1,0 +1,17 @@
+
+<div>
+    <p-multiSelect [options]="field?.options" [optionLabel]="field?.optionLabel" [(ngModel)]="selecteddata"
+        defaultLabel="Select a column" class="multiselect-custom" [filter]="true" [virtualScroll]="true" [itemSize]="50"
+        (ngModelChange)="onSelect()" [pTooltip]="field?.options.name" [optionValue]="field?.optionValue" display="chip"
+        [style]="{'width': field?.button? '90%' : '100%'}" (onClear)="onRemove($event)">
+       
+    <ng-template let-multiselect pTemplate="item">
+        <div class="flex align-items-center gap-2">
+            <div [pTooltip]="multiselect.tooltip"  [tooltipPosition]="'right'">{{multiselect[field?.optionLabel] }}</div>
+        </div>
+    </ng-template>
+
+    </p-multiSelect>
+    <button pButton [style]="{'width':'10%'}" icon="pi pi-check" type="button" (click)="onClick($event)" *ngIf="field?.button"></button>
+
+</div>

@@ -1,0 +1,98 @@
+<div class="page company-main-container" class="flex flex-column">
+  
+    <p-toolbar styleClass="custom-toolbar">
+        <ng-template pTemplate="left">
+            <h3>{{getTitlePage()}}</h3>
+        </ng-template>
+        <ng-template pTemplate="right">
+            <button pButton class="h-10 bg-blue-steelblue" pRipple label="{{'new_TC' | translate}}" icon="pi pi-plus"
+                (click)="showWareHouseCreationModifier = true"></button>
+            <span class="p-input-icon-left ">
+                <i class="pi pi-search"></i>
+                <input pInputText class="h-8 w-60 p-5" type="text" [ngModel]="searchText"
+                    (ngModelChange)="globalSearch($event)" placeholder="{{ 'search_TC' | translate}}" />
+            </span>
+            <button pButton pTooltip="{{'clearFilters_TC' | translate}}" class="p-button-outlined"
+                icon="pi pi-filter-slash" (click)="clear( dt)"></button>
+            <button pButton pRipple pTooltip="{{ 'export_TC' | translate}}" icon="pi pi-upload" class="p-button-help"
+                (click)="export(dt)"></button>
+            <button (click)="showDialog()" pButton pRipple pTooltip="{{'watcvideo_TC' | translate}}" icon="pi pi-video"
+                class="p-button-warning"></button>
+        </ng-template>
+    </p-toolbar>
+    <p-table #dt [columns]="columns" [value]="wareHouseCreationList" [rows]="10" [paginator]="true" [lazy]="true"
+        [(selection)]="selectedWareHouseCreation" [rowHover]="true" dataKey="id"
+        currentPageReportTemplate="{{translate.instant('entityTablePage_TC', {first: '{first}', last: '{last}', totalRecords: '{totalRecords}'})}}"
+        [showCurrentPageReport]="true" [scrollable]="true" scrollHeight="74vh" scrollDirection="both"
+        [totalRecords]="totalRecords" [loading]="loading" id="table" styleClass="p-datatable-sm">
+        <!-- (onLazyLoad)="nextPage($event)" -->
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th style="width: 3rem" pFrozenColumn>
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <ng-container *ngFor="let col of columns">
+                    <th [pSortableColumn]="col?.field">
+                        {{ col?.label | translate }}
+                        <ng-container [ngSwitch]="true">
+                            <ng-container *ngSwitchCase="col?.filter==false">
+                            </ng-container>
+                            <ng-container *ngSwitchDefault>
+                                <p-columnFilter #filter type="text" [field]="col?.field" display="menu"
+                                    [matchModeOptions]="[matchModeOptions]"></p-columnFilter>
+                            </ng-container>
+                        </ng-container>
+                    </th>
+                </ng-container>
+                <th pFrozenColumn alignFrozen="right" [frozen]="true" style="width:8rem" class="flex flex-row justify-content-center align-content-center"
+                   >
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-wareHouseCreationItem>
+            <tr>
+                <td pFrozenColumn>
+                    <p-tableCheckbox [value]="wareHouseCreationItem"></p-tableCheckbox>
+                </td>
+                <td>{{wareHouseCreationItem.wareHouseName}}</td>
+                <td>{{wareHouseCreationItem.wareHouseCode}}</td>
+                <td>{{wareHouseCreationItem.created | date: 'YYYY-MM-dd hh:mm:ss'}}</td>
+                <td>{{wareHouseCreationItem.modified | date: 'YYYY-MM-dd hh:mm:ss'}}</td>
+                <td pFrozenColumn alignFrozen="right" [frozen]="true">
+                    <button pButton pRipple pTooltip="{{ 'edit_TC' | translate}}" tooltipPosition="left"
+                        icon="pi pi-pencil" class="p-button-rounded p-button-success"
+                        (click)="editWareHouseCreation(wareHouseCreationItem)"></button>
+                    <button pButton pRipple pTooltip="{{ 'delete_TC' | translate}}" tooltipPosition="left"
+                        icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                        (click)="deleteWareHouseCreation($event, wareHouseCreationItem)"></button>
+                    <p-confirmPopup [key]="'deleteItem'"></p-confirmPopup>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            {{'entityTableFooter_TC' | translate}} {{totalRecords ? totalRecords : 0 }} {{'warehouseCreation_TC' |
+            translate}}
+        </ng-template>
+    </p-table>
+</div>
+<p-dialog #op [(visible)]="showWareHouseCreationModifier" [autoZIndex]="true" [baseZIndex]="10000" [modal]="true"
+    [appendTo]="'body'" [dismissableMask]="true" (onHide)="clearWareHouseCreation()" [breakpoints]="{ '960px': '75vw' }"
+    [draggable]="false" [resizable]="true" [maximizable]="true" [style]="{ width: '75vw' }" (onShow)="onDialogShow()">
+    <ng-template pTemplate="header">
+        <div class="flex flex-row justify-content-center align-content-center" [style]="{'width': '100%'}">
+            <div class="flex flex-column">
+                <h3>{{getTitleModifier()}}</h3>
+            </div>
+        </div>
+    </ng-template>
+    <dynamic-form-builder [fields]="getFields()" (onSubmit)="saveWarehouse($event)" [fullScreen]="false"
+        [progressValue]="progressValue" [successResponse]="successResponse"
+        [disabled]="disableSaveButton"></dynamic-form-builder>
+</p-dialog>
+<p-dialog [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw', height: '30vw' }"
+    [draggable]="false" [resizable]="false">
+    <video width="820" height="400" controls>
+        <source src="../../../../assets/trainingVideos/warehouse/Warehouse.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</p-dialog>

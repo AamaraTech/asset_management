@@ -1,0 +1,20 @@
+/* Input */
+
+:is(.p-inputgroup input:first-child, .p-inputgroup-addon) {
+    /* border: 0px !important; */
+    /* border-radius: 0px !important; */
+}
+
+.p-inputtext:enabled:focus {
+    box-shadow: none;
+    border-color: var(--color-6);
+}
+
+.p-inputtext:not(p-dropdown > div.p-dropdown > .p-element.p-dropdown-label.p-inputtext){
+    color: var(--color-6);
+    /* border: 1px solid var(--color-6); */
+}
+
+input.p-inputtext:read-only{
+    opacity: 0.5 !important;
+}

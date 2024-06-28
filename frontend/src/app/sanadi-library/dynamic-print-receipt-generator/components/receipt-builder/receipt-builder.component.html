@@ -1,0 +1,11 @@
+<div [ngClass]="{'receipt-form':layout}">
+    <div [ngClass]="{'landscape-card': layout=='landscape','card':layout=='portrait' }">
+        <div id="print">
+            <app-receipt-field-builder [fields]="fields"></app-receipt-field-builder>
+        </div>
+        <div class="flex flex-row center center">
+            <button pButton class="btn btn-primary" id="print" printTitle="Sample" printSectionId="print"
+                [useExistingCss]="true" ngxPrint>Print</button>
+        </div>
+    </div>
+</div>

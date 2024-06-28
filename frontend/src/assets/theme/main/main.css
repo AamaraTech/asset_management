@@ -1,0 +1,101 @@
+@import url('../components/sanadi-button.css');
+@import url('../components/sanadi-card.css');
+@import url('../components/sanadi-dialog.css');
+@import url('../components/sanadi-footer.css');
+@import url('../components/sanadi-input.css');
+@import url('../components/sanadi-menu.css');
+@import url('../components/sanadi-panel.css');
+@import url('../components/sanadi-scroll.css');
+@import url('../components/sanadi-sidebar.css');
+@import url('../components/sanadi-table.css');
+@import url('../components/sanadi-topbar.css');
+@import url('../components/sanadi-paginator.css');
+@import url('../components/sanadi-dataview.css');
+@import url('../components/sanadi-chart.css');
+@import url('../components/sanadi-checkbox.css');
+
+/* body {
+    background-color: var(--sanadi-body-bg-color) !important;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 !important;
+}
+
+
+.tile-container {
+    padding: 8vh 12vh 12vh 12vh;
+    row-gap: 10vh;
+}
+
+.tile {
+    position: relative;
+    border-radius: 20px;
+    font-family: var(--sanadi-font-gilroy-bold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32vh;
+    width: 32vh;
+}
+
+.tile {
+    background: var(--sanadi-card-bg) !important;
+    border: 1px solid var(--sanadi-card-border) !important;
+}
+
+
+
+.count-container {
+    padding: 10px;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+
+    border-radius: 50%;
+    min-width: 30%;
+    min-height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.count-container {
+    background-color: var(--sanadi-badge-bg-color);
+    color: var(--sanadi-badge-text-color);
+    box-shadow: var(--sanadi-badge-box-shadow);
+}
+
+@media (max-width: 991px) {
+    :is(.layout-topbar-logo, .p-toolbar-group-right, .hide-table-filter) {
+        display: none;
+    }
+
+    .show-table-filter-sm{
+        display: flex;
+    }
+}
+
+/* TODO: handle for mobile devices */
+.p-dropdown-label{
+    /* width: 75px !important; */
+}
+
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link{
+    color: var(--color-6) !important;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+    border-color: var(--color-6) !important;
+    color: var(--color-6) !important;
+}
+
+.p-accordion-header a.p-accordion-header-link{
+    color: var(--color-6) !important;
+}

@@ -1,0 +1,88 @@
+<div [formGroup]="form" class="flex flex-column">
+  
+  @if(field?.variant === "basic"){
+    <div class="flex flex-column gap-2 w-full">
+      <label for="field?.name">{{field?.label}}</label>
+      <p-dropdown class="flex-grow-1" appendTo="body"
+        [autoDisplayFirst]="field?.autoDisplayFirst ? field.autoDisplayFirst:false" [options]="field?.options()"
+        [id]="field?.label" [name]="field?.name" [formControlName]="field?.name" [optionLabel]="field?.optionLabel"
+        [optionValue]="field?.optionValue" [filter]="true"
+        [filterBy]="field?.optionLabelList?.length ? field?.optionLabelList.toLocaleString() : field?.optionLabel"
+        [showClear]="false" [placeholder]="field?.placeholder" [virtualScroll]="true" [itemSize]="50"
+        [style]="{'width': field?.dialogue ? '90%' : '100%'}" (onChange)="onChangeHandler($event)"
+        [readonly]="field?.readonly" (onFilter)="onFilterChangeHandler($event)" (onClick)="onClickDropdown($event)"
+        [emptyFilterMessage]="'noResultFoundErrorMsg_SC' | translate">
+      </p-dropdown>
+  </div>
+   
+  }
+  @else{
+    <p-dropdown class="flex-grow-1" appendTo="body"
+    [autoDisplayFirst]="field?.autoDisplayFirst ? field.autoDisplayFirst:false" [options]="field?.options()"
+    [id]="field?.label" [name]="field?.name" [formControlName]="field?.name" [optionLabel]="field?.optionLabel"
+    [optionValue]="field?.optionValue" [filter]="true"
+    [filterBy]="field?.optionLabelList?.length ? field?.optionLabelList.toLocaleString() : field?.optionLabel"
+    [showClear]="false" [placeholder]="field?.placeholder" [virtualScroll]="true" [itemSize]="50"
+    [style]="{'width': field?.dialogue ? '90%' : '100%'}" (onChange)="onChangeHandler($event)"
+    [readonly]="field?.readonly" (onFilter)="onFilterChangeHandler($event)" (onClick)="onClickDropdown($event)"
+    [emptyFilterMessage]="'noResultFoundErrorMsg_SC' | translate">
+    <!-- <ng-template *ngIf="field?.optionLabelList" pTemplate="selectedItem">
+		<div class="item-item item-item-value" *ngIf="field?.value">
+			<div>{{getDropDownText(field?.value)}}</div>[required]="field?.required"
+		</div>
+	</ng-template> -->
+
+    <!-- <ng-template pTemplate="selectedItem" *ngIf="!field?.autoDisplayFirst">
+      <div class="item-item item-item-value" *ngIf="!field?.value">
+        <div>--</div>
+      </div>
+      <div class="item-item item-item-value" *ngIf="field?.value">
+        <div>{{getDropDownText(field?.value)}}</div>
+      </div>
+    </ng-template>
+    <ng-template *ngIf="!field?.optionLabelList" let-item pTemplate="item">
+      <div class="item-item">
+        <div>{{item[field?.optionLabel]}}</div>
+      </div>
+    </ng-template>
+    <ng-template *ngIf="field?.optionLabelList" let-item pTemplate="item">
+      <div class="item-item">
+        <div>{{getOptionValue(item, field?.optionLabelList)}}</div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="emptyfilter">
+      <div [style]="{'display':'flex','justify-content':'center'}">
+        <ng-container *ngIf="loading; else noResults">
+          <p-progressSpinner [style]="{'width':'4rem','height':'4rem'}" strokeWidth="2" fill="var(--surface-ground)"
+            animationDuration="1s"></p-progressSpinner>
+        </ng-container>
+      </div>
+      <ng-template #noResults>
+        <div>{{'noResultFoundErrorMsg_SC' | translate}}</div>
+      </ng-template>
+    </ng-template> -->
+  </p-dropdown>
+  }
+  @if(field?.subForm?.length){
+  <button pButton icon="pi pi-plus" type="button" class="primary custom-dropdwon-button" (click)="onClickDp(op)"></button>
+  }
+
+  <button pButton [style]="{'width':'10%'}" icon="pi pi-plus" type="button" (click)="showDialog()"
+    *ngIf="field?.dialogue"></button>
+  <div *ngIf="inValid && (isDirty || isTouched)" class="p-error block">
+    <small *ngIf="isError">{{errorText}}</small>
+  </div>
+  <div *ngIf="field?.dialogue">
+    <p-dialog [modal]="true" [appendTo]="'body'" [dismissableMask]="true" header="{{field.dialogueLabel}}"
+      [(visible)]="display" (visibleChange)="handleDialogue($event)" [style]="{width: '90vw', height: '90vh'}">
+      <dynamic-form-builder [fields]="field.dialogueFields"
+        (onSubmit)="saveDialogueData($event)"></dynamic-form-builder>
+    </p-dialog>
+  </div>
+</div>
+
+<p-overlayPanel #op>
+  @if(field?.subForm?.length){
+  <dynamic-form-builder [fields]="field.subForm" (onSubmit)="saveDialogueData($event)"></dynamic-form-builder>
+  }
+</p-overlayPanel>

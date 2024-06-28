@@ -1,0 +1,17 @@
+<p-panel class="flex flex-column h-full w-full">
+    <ng-template pTemplate="header">
+        <ng-content select="[header]"></ng-content>
+    </ng-template>
+
+    <ng-content select="[body]"></ng-content>
+
+
+    <ng-template pTemplate="footer">
+        <ng-content select="[footer]"></ng-content>
+    </ng-template>
+
+
+    <!-- <sanadi-scroll class="flex-grow-1" [scrollVariant]="'2'">
+        <router-outlet></router-outlet>
+    </sanadi-scroll> -->
+</p-panel>

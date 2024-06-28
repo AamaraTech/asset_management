@@ -1,0 +1,30 @@
+p-panel.sanadi-panel .p-panel-header {
+    padding: 0;
+}
+
+p-panel.sanadi-panel .p-component.p-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+p-panel.sanadi-panel .p-toggleable-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
+}
+
+p-panel.sanadi-panel .p-toggleable-content .p-panel-content {
+    flex-grow: 1;
+    background: inherit !important;
+    color: inherit !important;
+}
+p-panel.sanadi-panel .p-panel .p-panel-content{
+    padding: 0px !important;
+}
+
+p-panel.sanadi-panel .p-panel-footer {
+    padding: 0;
+}

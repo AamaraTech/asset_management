@@ -1,0 +1,24 @@
+/* Side Bar */
+
+p-sidebar>* {
+    background-color: var(--sanadi-top-bar-bg) !important;
+    color: var(--sanadi-top-bar-text) !important;
+}
+
+.side-menu {
+    background-color: var(--sanadi-top-bar-bg) !important;
+    color: var(--sanadi-top-bar-text) !important;
+    position: relative;
+    border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+    .side-menu {
+        position: fixed;
+        border-radius: 0;
+    }
+
+}
+/* p-panel>* {
+    background-color: var(--sanadi-top-bar-bg);
+} */

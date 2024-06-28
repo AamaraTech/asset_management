@@ -1,0 +1,23 @@
+p-dataview {
+    display: inherit;
+    flex-direction: inherit;
+    height: inherit;
+}
+
+p-dataview .p-dataview:is(.p-dataview-grid, .p-dataview-list) {
+    display: inherit;
+    flex-direction: inherit;
+    height: inherit;
+}
+
+p-dataview .p-dataview:is(.p-dataview-grid, .p-dataview-list) .p-dataview-content {
+    flex-grow: 1;
+}
+
+p-dataviewlayoutoptions .p-dataview-layout-options  .p-button.p-highlight{
+    background-color: var(--sanadi-primary-btn) !important;
+    color: var(--white) !important;
+}
+p-dataviewlayoutoptions .p-dataview-layout-options  .p-button.p-highlight:hover {
+    background-color: var(--sanadi-primary-btn) !important;
+}

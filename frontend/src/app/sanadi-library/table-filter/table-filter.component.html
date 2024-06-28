@@ -1,0 +1,93 @@
+<p-table #dt [value]="dataSource" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+    [tableStyle]="{ 'min-width': '50rem'}" [lazy]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [scrollable]="true"
+    scrollHeight="calc(100vh - 35vh)" scrollDirection="both" [totalRecords]="totalRecords"
+    (onLazyLoad)="nextPage($event)" [styleClass]="'p-datatable-sm'" [scrollable]="true">
+    <ng-template pTemplate="caption">
+        <!-- <sanadi-progress-knob></sanadi-progress-knob> -->
+        <div snLayout="row" snLayoutAlign="space-between center">
+            <h3>
+                {{config?.pageTitle | translate}}
+            </h3>
+            <div class="gap-2 sm:hidden md:flex lg:flex hide-table-filter">
+                <button pButton label="New" (click)="show()" class="primary"></button>
+                <span class="p-input-icon-left ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="globalSearch($event,dt)" placeholder="Search keyword" />
+                </span>
+                <button class="p-button-outlined secondary md:hidden lg:flex xl:flex" pButton label="Active"
+                    icon="pi pi-check-circle"></button>
+                <button class="p-button-outlined secondary md:hidden lg:flex xl:flex" pButton label="Inactive"
+                    icon="pi pi-times-circle"></button>
+                <button class="p-button-outlined secondary md:hidden lg:flex xl:flex" pButton
+                    icon="pi pi-filter"></button>
+                <button class="p-button-outlined secondary md:hidden lg:flex xl:flex" pButton
+                    icon="pi pi-upload"></button>
+                <button class="p-button-outlined secondary md:hidden lg:flex xl:flex" pButton
+                    icon="pi pi-video"></button>
+
+                <button class="p-button-outlined secondary md:flex lg:hidden xl:hidden" pButton icon="pi pi-ellipsis-v"
+                    (click)="menu.toggle($event)"></button>
+
+            </div>
+
+            <div class="flex gap-2 sm:flex md:hidden lg:hidden xl:hidden show-table-filter-sm">
+                <!-- <span class="p-input-icon-left ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="globalSearch($event,dt)" placeholder="Search keyword" />
+                </span> -->
+                <button pButton (click)="show()" class="primary" icon="pi pi-plus"></button>
+                <button class="p-button-outlined secondary p-button-sm" pButton icon="pi pi-ellipsis-v"
+                    (click)="menu.toggle($event)"></button>
+            </div>
+        </div>
+        <p-menu #menu [model]="items" [popup]="true"></p-menu>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 4rem">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            @defer{
+            @for(key of config?.tableHeaders; track key.label){
+            <th>{{key.label | translate}}
+                <p-columnFilter *ngIf="key?.field" [matchModeOptions]="key?.matchModeOptions" #filter type="text"
+                    [field]="key?.field" display="menu"></p-columnFilter>
+            </th>
+            }
+            }
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product let-editing="editing" let-ri="rowIndex">
+        <tr [pEditableRow]="product">
+            <td>
+                <p-tableCheckbox [value]="product"></p-tableCheckbox>
+            </td>
+            @for(item of config?.tableBody; track item){
+            <td>
+                <p-cellEditor>
+                    <ng-template pTemplate="input">
+                        <input pInputText type="text" [(ngModel)]="product[item]">
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                        {{product[item] | translate}}
+
+                        <!-- {{product.price | currency: 'USD'}} -->
+                    </ng-template>
+                </p-cellEditor>
+            </td>
+            }
+            <td>
+                <div class="flex align-items-center justify-content-center gap-2" snLayout="row">
+                    @for(action of config.actions; track action.actionType){
+                    <button pButton pRipple type="button" icon="pi pi-{{action.icon}}"
+                        (click)="onAction($event, product, action.actionType)"
+                        class=" p-button-sm p-button-rounded p-button-text" ></button>
+                    }
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-confirmPopup></p-confirmPopup>

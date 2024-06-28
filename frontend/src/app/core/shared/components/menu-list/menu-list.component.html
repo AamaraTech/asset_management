@@ -1,0 +1,30 @@
+
+
+@if(isSideBarOptionsEnabled){
+    <p-panelMenu [model]="items"></p-panelMenu>
+}
+@else{
+    <div class="flex flex-column">
+        <button type="button" class="p-button-text" pButton pRipple icon="pi pi-home" *ngIf="isUserLoggedIn()"
+            label="{{ 'home_TC' | translate }}" routerLink="/home" (click)="closeMenu()">
+        </button>
+    
+        <button type="button" class="p-button-text" pButton pRipple icon="pi pi-sign-in" *ngIf="!isUserLoggedIn()"
+            label="{{ 'login_TC' | translate }}" routerLink="/login" (click)="closeMenu()"></button>
+    
+        <!-- *ngxPermissionsOnly="['company.view_company']" -->
+        <button type="button" class="p-button-text" pButton pRipple icon="pi pi-sitemap" *ngIf="isUserLoggedIn()"
+            label="{{ 'company_TC' | translate }}" routerLink="/tiles" [queryParams]="{ data: companyObjects }"
+            (click)="closeMenu()"></button>
+        <!-- <span *ngxPermissionsOnly="['company.view_company']">
+            <button type="button" class="p-button-text" pButton pRipple icon="pi pi-key" *ngIf="isUserLoggedIn()"
+                (click)="closeMenu()" label="{{ 'password_reset_TC' | translate }}"
+                routerLink="/reset-password"></button></span> -->
+        <button type="button" class="p-button-text" pButton pRipple icon="pi pi-discord" *ngIf="isUserLoggedIn()"
+            label="{{ 'master_TC'| translate }}" routerLink="/tiles" [queryParams]="{ data: mastersObject }"
+            (click)="closeMenu()"></button>
+        <button type="button" class="p-button-text" pButton pRipple icon="pi pi-book" *ngIf="isUserLoggedIn()"
+            (click)="closeMenu()" label="Reports" routerLink="/report/list"></button>
+    
+    </div>
+}

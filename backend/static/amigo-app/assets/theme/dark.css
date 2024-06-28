@@ -1,0 +1,120 @@
+/* Dark Theme */
+:root {
+  /* Common Colors */
+  --sanadi-bg-color: #19232a;
+  --sanadi-text-color: #FFFFFF;
+  --sanadi-card-border: #1c2730;
+  --sanadi-table-row-hover: #1c2730;
+  --sanadi-body-bg-color: #19232a;
+  --sanadi-badge-box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+
+
+
+  /* CSS HEX */
+  --color-1: #02111b;
+  --color-2: #3f4045;
+  --color-3: #30292f;
+  --color-4: #5d737e;
+  --color-5: #fcfcfc;
+  --white: #02111b;
+  --color-6: #fcfcfc;
+
+
+  /* Topbar Background */
+  --topbar-background: var(--color-1);
+  --topbar-text: var(--color-5);
+
+  /* Sidebar Menu hover */
+  --side-bar-menu-background: var(--color-1);
+  --side-bar-menu-hover: var(--color-4);
+
+  /* Footer */
+  --footer-bg: var(--color-1);
+  --footer-text: var(--color-5);
+
+  --table-header-bg: var(--color-1);
+
+  --dialog-bg: var(--color-1);
+  --dialog-text: var(--color-5);
+
+  /* Content Background */
+  --content-background: var(--color-2);
+
+  /* Footer Background */
+  --footer-background: var(--color-3);
+
+  /* Button Colors */
+  --primary-button-background: var(--color-4);
+  --primary-button-text: var(--color-5);
+  --secondary-button-background: var(--color-2);
+  --secondary-button-text: var(--color-5);
+
+  /* Table Colors */
+  --table-border: var(--color-4);
+
+  /* Dropdown Colors */
+  --dropdown-background: var(--color-2);
+  --dropdown-text: var(--color-5);
+  --dropdown-border: var(--color-4);
+
+  /* Popup Colors */
+  --popup-background: var(--color-3);
+  --popup-text: var(--color-5);
+  --popup-border: var(--color-4);
+
+  /* Toast Message Colors */
+  --toast-background: var(--color-4);
+  --toast-text: var(--color-5);
+
+  /* Additional Styles (customize as needed) */
+  --link-color: var(--color-4);
+  --link-hover-color: var(--color-5);
+
+
+
+
+  /* Header and Top Bar */
+  --sanadi-top-bar-bg: var(--topbar-background);
+  --sanadi-top-bar-text: var(--topbar-text);
+  --sanadi-floating-menu-bg: var(--sanadi-top-bar-bg);
+  --sanadi-floating-menu-icon: var(--sanadi-text-color);
+  --sanadi-header-bg: var(--sanadi-top-bar-bg);
+
+
+
+  /* Buttons */
+  --sanadi-primary-btn: var(--color-1);
+  --sanadi-secondary-btn: var(--color-1);
+  --sanadi-tertiary-btn: #f39c12;
+
+  --sanadi-button-border: 1px solid var(--color-5);
+
+  /* Cards and Autocomplete */
+  --sanadi-card-bg: #273942;
+  --sanadi-autocomplete-input-bg: #1c2730;
+  --sanadi-autocomplete-suggestion-highlight: #30444e;
+
+  /* Charts */
+  --sanadi-chart-line: #693c72;
+  --sanadi-chart-bar: #b0563c;
+  --sanadi-chart-pie: #2b6648;
+
+
+
+  /* Footer */
+  --sanadi-footer-bg: var(--footer-bg);
+  --sanadi-footer-text: var(--footer-text);
+
+  /* Table Header and Form Input */
+  --sanadi-table-header-bg: var(--sanadi-top-bar-bg);
+  --sanadi-form-input-bg: #1c2730;
+  --sanadi-form-input-border: #30444e;
+
+  /* Floating Action Button (FAB) */
+  --sanadi-fab-bg-color: #1b4f72;
+  --sanadi-fab-icon-color: var(--sanadi-text-color);
+
+  /* Badge */
+  --sanadi-badge-bg-color: var(--sanadi-fab-bg-color);
+  --sanadi-badge-text-color: var(--sanadi-text-color);
+}

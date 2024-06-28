@@ -1,0 +1,41 @@
+{
+    "company": [
+        {
+            "label": "company_TC",
+            "routerLink": "/company",
+            "showModifier": "showCompanyModifier",
+            "apiUrl": "COMPANY_CRUD",
+            "showCount": true,
+            "showCreate": true,
+            "showExport": true
+        },
+        {
+            "label": "companyUser_TC",
+            "routerLink": "/company/companyUser",
+            "showModifier": "showCompanyUserModifier",
+            "apiUrl": "COMPANY_USER_CRUD",
+            "showCount": true,
+            "showCreate": true,
+            "showExport": true
+        },
+        {
+            "label": "department_TC",
+            "routerLink": "/company/department",
+            "showModifier": "showDepartmentModifier",
+            "apiUrl": "DEPARTMENT_CRUD",
+            "showCount": true,
+            "showCreate": true,
+            "showExport": true
+        },
+        {
+            "label": "appSettings_TC",
+            "routerLink": "/company/appSettings",
+            "showModifier": "showAppSettingsModifier",
+            "apiUrl": "APP_SETTINGS_CRUD",
+            "showCount": true,
+            "showCreate": true,
+            "showExport": true
+        }
+
+    ]
+}

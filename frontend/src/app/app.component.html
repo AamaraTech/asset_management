@@ -1,0 +1,28 @@
+<p-toast position="top-center" key="toaster"></p-toast>
+
+<p-panel class="sanadi-panel flex flex-column h-full w-full">
+  <ng-template pTemplate="header">
+    <sanadi-topbar class="flex-grow-1" (toggleMenu)="toggleMenu($event)" [isSidebarOpen]="isSidebarOpen"></sanadi-topbar>
+  </ng-template>
+  <!-- <div class="flex flex-row justify-content-start h-full"> -->
+    <!-- @if(isSidebarOpen){
+      <div class="flex p-1">
+        <sanadi-side-menu [isSidebarOpen]="isSidebarOpen" (onCloseSidebar)="toggleMenu($event)"></sanadi-side-menu>
+      </div>
+    } -->
+   
+    <div class="flex-grow-1 h-full">
+      <!-- <sanadi-scroll [scrollVariant]="'2'"> -->
+      <!-- <div class="px-3"> -->
+      <router-outlet></router-outlet>
+      <!-- </div> -->
+      <!-- </sanadi-scroll> -->
+    <!-- </div> -->
+  </div>
+  <ng-template pTemplate="footer">
+    <app-footer></app-footer>
+  </ng-template>
+</p-panel>
+
+<p-speedDial direction="right" showIcon="pi pi-discord" [rotateAnimation]="false" [model]="speedDialOptionsSignal()"
+  buttonClassName="speed-dial-button"></p-speedDial>

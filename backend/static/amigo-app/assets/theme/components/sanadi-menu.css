@@ -1,0 +1,19 @@
+.p-panelmenu .p-panelmenu-content,
+.p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
+    background-color: var(--side-bar-menu-background) !important;
+    border: none !important;
+}
+
+.p-panelmenu .p-panelmenu-header .p-panelmenu-header-content:hover {
+    background-color: var(--side-bar-menu-hover) !important;
+    border: none !important;
+}
+
+.p-panelmenu .p-panelmenu-content a > *,
+.p-panelmenu .p-panelmenu-header .p-panelmenu-header-content a {
+    color: var(--sanadi-top-bar-text) !important;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover{
+    background-color: var(--side-bar-menu-hover) !important;
+}

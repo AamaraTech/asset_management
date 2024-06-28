@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amigo-ams-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: amigo-ams-app
+  template:
+    metadata:
+      labels:
+        app: amigo-ams-app
+    spec:
+      containers:
+      - name: amigo-ams-app
+        image: localhost:32000/amigo-ams-app:v1.1
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "0.5"
+          requests:
+            memory: "256Mi"
+            cpu: "0.25"
+        volumeMounts:
+        - name: media-volume
+          mountPath: /backend/media/images
+      volumes:
+      - name: media-volume
+        hostPath:
+          path: /mnt/media-data/ST000075_ASSET_MANAGEMENT_DEVELOP

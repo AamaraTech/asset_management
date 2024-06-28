@@ -1,0 +1,27 @@
+@defer{
+<p-sidebar #sidebarRef [(visible)]="isSidebarOpen" [autoZIndex]="true" styleClass="side-menu" 
+    [modal]="isBelow992" (onHide)="closeSideBar($event)">
+    <ng-template pTemplate="headless">
+        <div class="flex flex-column h-full">
+            <div class="flex align-items-center justify-content-between px-2 pt-3 flex-shrink-0">
+                <span class="inline-flex align-items-center gap-2 side-menu-logo" *ngIf="isBelow992">
+                    <img src="assets/images/logo.png" alt="logo" height="40" width="40">
+                    <h3>AMS</h3>
+                </span>
+                <span >
+                    <button pButton type="button" class="primary" routerLink="/home" icon="pi pi-home"
+                        label="Home"></button>
+                </span>
+                <span *ngIf="!isBelow992">
+                    <button pButton type="button" class="primary" (click)="closeCallback($event)" icon="pi pi-times"
+                        styleClass="h-2rem w-2rem"></button>
+                </span>
+            </div>
+            <!-- <hr style="margin: 0.25rem;"> -->
+            <div class="overflow-y-auto">
+                <app-menu-list (emitter)="closeSideBar($event)" [isSideBarOptionsEnabled]="true"></app-menu-list>
+            </div>
+        </div>
+    </ng-template>
+</p-sidebar>
+}

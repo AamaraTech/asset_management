@@ -1,0 +1,65 @@
+<div [formGroup]="form">
+  <div>
+    <div id="field?.name" class="p-inputgroup">
+      <span *ngIf="field?.prefixGroupBy" class="p-inputgroup-addon">
+        {{field?.prefixGroupByText}}
+        <i *ngIf="field?.prefixGroupByIcon" class="pi {{field?.prefixGroupByIcon}}"></i>
+      </span>
+
+     
+
+        @if(field?.variant === "basic"){
+          <div class="flex flex-column gap-2 w-full">
+            <label for="field?.name">{{field?.label}}</label>
+            <input type="text" pInputText [attr.type]="field?.type" class="w-full form-control input-field" [id]="field?.name"
+            [name]="field?.name" [formControlName]="field?.name" pInputText [placeholder]="field?.placeholder"
+            [class.ng-invalid]="!isValid" [class.ng-dirty]="!isValid" [readonly]="field?.readonly" />
+            <!-- <small id="username-help">Enter your username to reset your password.</small> -->
+        </div>
+        }
+        @else{
+          <input type="text" pInputText [attr.type]="field?.type" class="form-control input-field" [id]="field?.name"
+          [name]="field?.name" [formControlName]="field?.name" pInputText [placeholder]="field?.placeholder"
+          [class.ng-invalid]="!isValid" [class.ng-dirty]="!isValid" [readonly]="field?.readonly" />
+        }
+
+      <span *ngIf="field?.suffixGroupBy" class="p-inputgroup-addon">
+        {{field?.suffixGroupByText}}
+        <i *ngIf="field?.suffixGroupByIcon" class="pi {{field?.suffixGroupByIcon}}"></i>
+      </span>
+      <button *ngIf="field?.suffixActionGroupBy" type="button" pButton pRipple
+        icon="pi {{field?.suffixActionGroupByIcon}}" styleClass="p-button-danger" (click)="onClickDp(op, 'category')"></button>
+    </div>
+
+    <div *ngIf="inValid && (isDirty || isTouched)" class="p-error block">
+      <small *ngIf="isError">{{errorText}}</small>
+    </div>
+  </div>
+
+  <div *ngIf="field?.dialogue">
+    <p-dialog header="{{field.dialogueLabel}}" [(visible)]="display" [style]="{width: '90vw', height: '90vh'}">
+      <dynamic-form-builder [fields]="field.dialogueFields"
+        (onSubmit)="saveDialogueData($event)"></dynamic-form-builder>
+    </p-dialog>
+  </div>
+  <!-- <div *ngIf="field?.calculate" class="p-inputgroup">
+    <input [attr.type]="field?.type" class="form-control" [id]="field?.name" [name]="field?.name" [formControlName]="field?.name"
+      pInputText [placeholder]="field?.placeholder" [pValidateOnly]="!field?.keyFilter" pKeyFilter="{{field?.keyFilter ? field?.keyFilter : 'alphanum'}}" [class.ng-invalid]="!isValid" [class.ng-dirty]="!isValid"
+      [readonly]="field?.readonly" > -->
+  <!-- </div> -->
+
+</div>
+
+<p-overlayPanel #op>
+
+
+  @if(field?.subForm){
+    <dynamic-form-builder [fields]="field.subForm"
+    (onSubmit)="saveDialogueData($event)"></dynamic-form-builder>
+  }
+
+  <!-- <input type="text" pInputText />
+
+  <input type="text" pInputText /> -->
+
+</p-overlayPanel>

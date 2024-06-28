@@ -1,0 +1,35 @@
+:root {
+  --sanadi-bg-color: #ecf0f1;
+
+  --sanadi-primary-btn: #e74c3c;
+  --sanadi-secondary-btn: #3498db;
+  --sanadi-tertiary-btn: #2ecc71;
+
+  --sanadi-card-bg: #5dade2; /* A light blue shade for cards */
+  --sanadi-card-border: #2c3e50;
+  --sanadi-autocomplete-input-bg: #3498db;
+  --sanadi-autocomplete-suggestion-highlight: #2ecc71;
+  --sanadi-chart-line: #3498db; /* Consistent with primary button color for visibility */
+  --sanadi-chart-bar: #3498db;
+  --sanadi-chart-pie: #3498db;
+  --sanadi-top-bar-bg: #3498db;
+  --sanadi-top-bar-text: #FFFFFF;
+  --sanadi-floating-menu-bg: #3498db;
+  --sanadi-floating-menu-icon: #FFFFFF;
+  --sanadi-footer-bg: #5dade2; /* A shade of blue for the footer */
+  --sanadi-footer-text: #FFFFFF;
+  --sanadi-table-header-bg: #3498db;
+  --sanadi-table-row-hover: #2980b9; /* A slightly darker shade for row hover in tables */
+  --sanadi-form-input-bg: #3498db;
+  --sanadi-form-input-border: #2c3e50;
+
+  --sanadi-fab-bg-color: #3498db;
+  --sanadi-fab-icon-color: #FFFFFF;
+
+  --sanadi-body-bg-color: #ecf0f1;
+
+  /* Badge Color */
+  --sanadi-badge-bg-color: #3498db;
+  --sanadi-badge-text-color: #FFFFFF;
+  --sanadi-badge-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,54 @@
+.p-dialog .p-dialog-header {
+    background: var(--dialog-bg) !important;
+    color: var(--dialog-text) !important;
+    padding: 1rem !important;
+}
+
+.p-dialog .p-dialog-content {
+    color: var(--dialog-text);
+    padding: 1rem !important;
+}
+
+.p-dialog .p-dialog-footer {
+    background: var(--dialog-bg);
+    color: var(--dialog-text);
+    padding: 1rem !important;
+}
+
+
+sanadi-dialog{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+sanadi-dialog > dynamic-form-builder > form{
+    height: 100% !important;
+}
+sanadi-dialog > dynamic-form-builder > form > div{
+    height: 100% !important;
+}
+
+sanadi-dialog  > dynamic-form-builder > form > div > div > tab{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+sanadi-dialog  > dynamic-form-builder > form > div > div > tab > p-tabview{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+sanadi-dialog > dynamic-form-builder > form > div > div > tab > p-tabview div.p-tabview{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+sanadi-dialog > dynamic-form-builder > form > div > div > tab > p-tabview > div.p-tabview > div.p-tabview-panels{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

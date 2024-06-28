@@ -1,0 +1,9 @@
+.p-paginator{
+    background: inherit !important;
+    color: inherit !important;
+}
+
+.p-paginator > *{
+    background: inherit !important;
+    color: inherit !important;
+}

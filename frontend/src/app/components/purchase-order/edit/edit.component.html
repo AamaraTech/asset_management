@@ -1,0 +1,200 @@
+<form [formGroup]="form">
+    <div class="h-full flex flex-column px-3 justify-content-between">
+        <div>
+            <p-tabView>
+                <p-tabPanel header="{{ 'purchase_Order_Details_TC' | translate}}">
+                    <div>
+                        <p-accordion [activeIndex]="0">
+                            <p-accordionTab header="{{ 'purchase_Order_Details_TC' | translate}}">
+                                <div class="flex flex-column gap-3">
+
+                                    <div class="flex flex-row justify-content-between gap-3">
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getSourceInput()"></sanadi-input>
+
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getPoNoInput()"></sanadi-input>
+                                        <date class="flex-grow-1" [form]="form" [field]="getPoDate()"></date>
+
+                                    </div>
+
+                                    <div class="flex flex-row justify-content-between gap-3">
+
+                                        <dropdown class="flex-grow-1" [form]="form" [field]="getVendorDropDown()">
+                                        </dropdown>
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getPocName()"></sanadi-input>
+
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getPocPhone()"></sanadi-input>
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getPocEmail()"></sanadi-input>
+
+                                    </div>
+
+
+
+                                </div>
+                            </p-accordionTab>
+                            <p-accordionTab header="{{ 'address_Details_TC' | translate}}">
+                                <div class="flex flex-row gap-3 justify-content-between">
+
+                                    <div class="flex flex-column w-full gap-3">
+
+                                        <div class="flex flex-row gap-3 w-full">
+
+                                            <div class="flex flex-column gap-3 w-full">
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getBillTOAddress1()"></sanadi-input>
+
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getBillTOAddress2()"></sanadi-input>
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getBillToName()"></sanadi-input>
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getBilltoTax()"></sanadi-input>
+                                            </div>
+
+                                            <div class="flex flex-column gap-3 w-full">
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getBillToCountry()"></sanadi-input>
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getBillToCity()"></sanadi-input>
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getBillToZip()"></sanadi-input>
+
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getBillToState()"></sanadi-input>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="flex flex-column w-full gap-3">
+                                        <div class="flex flex-row gap-3 w-full">
+
+                                            <div class="flex flex-column gap-3 w-full">
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getShipTOAddress1()"></sanadi-input>
+
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getShipTOAddress2()"></sanadi-input>
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getShipToName()"></sanadi-input>
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getShiptoTax()"></sanadi-input>
+                                            </div>
+
+                                            <div class="flex flex-column gap-3 w-full">
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getShipToCountry()"></sanadi-input>
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getShipToCity()"></sanadi-input>
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getShipToZip()"></sanadi-input>
+
+                                                <sanadi-input class="flex-grow-1" [form]="form"
+                                                    [field]="getShipToState()"></sanadi-input>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </p-accordionTab>
+
+                            <p-accordionTab header="{{ 'other_Details_TC' | translate}}">
+                                <div class="flex flex-column gap-3">
+
+                                    <div class="flex flex-row justify-content-between gap-3">
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getVendorQuotation()"></sanadi-input>
+
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getQuateDate()"></sanadi-input>
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getDeliveryTerms()"></sanadi-input>
+                                        <!-- <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getDeliveryPreference()"></sanadi-input>
+
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getPaymentTerms()"></sanadi-input> -->
+                                    </div>
+
+                                    <div class="flex flex-row justify-content-between gap-3">
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getDeliveryPreference()"></sanadi-input>
+
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getPaymentTerms()"></sanadi-input>
+
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="getPaymentType()"></sanadi-input>
+                                    </div>
+
+                                    <div class="flex flex-row justify-content-between gap-3">
+
+                                        <textbox class="flex-grow-1" [form]="form" [field]="getNote()"></textbox>
+
+                                        <textbox class="flex-grow-1" [form]="form" [field]="getTermsAndCondition()">
+                                        </textbox>
+                                    </div>
+                                </div>
+                            </p-accordionTab>
+                        </p-accordion>
+
+                    </div>
+                </p-tabPanel>
+                <p-tabPanel header="{{ 'addProducts_TC' | translate}}">
+                    <div>
+
+                        <div class="flex">
+                            <table-field [form]="form" [columnSchema]="tableField?.columnSchema" [field]="tableField"
+                                [formName]="tableField?.name" [formSchema]="tableField?.formSchema"
+                                [dataSource]="tableField?.dataSource" [formInitialise]="tableField?.formInitialise"
+                                [dataKey]="tableField?.dataKey" [scrollHeight]="tableField?.scrollHeight"
+                                [hideButton]="tableField?.hideButton" [hideFrozenColumn]="tableField?.hideFrozenColumn">
+                            </table-field>
+                        </div>
+                        <div class="flex flex-row gap-3 pt-5">
+                            <div class="flex flex-column gap-3 w-full">
+                                <sanadi-input class="flex-grow-1" [form]="form" [field]="getDiscount()"></sanadi-input>
+
+                                <sanadi-input class="flex-grow-1" [form]="form" [field]="getTaxAmount()"></sanadi-input>
+                            </div>
+
+
+                            <div class="flex flex-column gap-3 w-full">
+                                <sanadi-input class="flex-grow-1" [form]="form" [field]="getSubTotal()"></sanadi-input>
+
+                                <sanadi-input class="flex-grow-1" [form]="form"
+                                    [field]="getTotalAmount()"></sanadi-input>
+                            </div>
+                        </div>
+                    </div>
+
+                </p-tabPanel>
+            </p-tabView>
+
+        </div>
+
+        <div class="flex flex-row justify-content-between py-5">
+            <div>
+                @if(tabIndex()){
+                @if(tabIndex()?.index > 0){
+                <button pButton label="Previous" class="primary" (click)="previousTab()"></button>
+                }
+                @if(tabIndex()?.index !== tabIndex()?.tabsLength - 1){
+                <button pButton label="Next" class="primary" (click)="nextTab()"></button>
+
+                }
+                }
+            </div>
+
+            <div>
+                <button pButton label="Cancel" class="secondary" (click)="cancel()"></button>
+                <button pButton label="Save" class="primary" (click)="saveForm()"></button>
+            </div>
+        </div>
+    </div>
+</form>

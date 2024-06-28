@@ -1,0 +1,96 @@
+:root {
+  /* Common Colors */
+  --sanadi-bg-color: #F5F5F5;
+  --sanadi-text-color: #000000;
+  --sanadi-card-border: #D1D1D1;
+  --sanadi-table-row-hover: #EAEAEA;
+  --sanadi-badge-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* CSS HEX */
+  --color-1: #c5d5ea;
+  --color-2: #759eb8;
+  --color-3: #7392b7;
+  --color-4: #b3c5d7;
+  --color-5: #d8e1e9;
+  --color-6: #142942;
+  --white: #ffffff;
+
+
+  /* Start */
+
+  /* Topbar Background */
+  --topbar-background: var(--color-3);
+  --topbar-text: var(--white);
+
+  /* Sidebar Menu hover */
+  --side-bar-menu-background: var(--color-3);
+  --side-bar-menu-hover: var(--color-1);
+
+  /* Footer */
+  --footer-bg: var(--color-3);
+  --footer-text: var(--white);
+
+  --table-header-bg: var(--color-5);
+
+  --dialog-bg: var(--color-5);
+  --dialog-text: var(--color-6);
+
+  /* Content Background */
+  --content-background: var(--color-2);
+
+  /* Footer Background */
+  --footer-background: var(--color-3);
+
+  /* Button Colors */
+  --primary-button-background: var(--color-3);
+  --primary-button-text: var(--white);
+  --secondary-button-background: var(--color-6);
+  --secondary-button-text: var(--color-6);
+
+
+  --sanadi-primary-btn: var(--primary-button-background);
+  --sanadi-secondary-btn: var(--secondary-button-background);
+  --sanadi-tertiary-btn: #f39c12;
+
+  --sanadi-button-border: none;
+
+  /* Header and Top Bar */
+  --sanadi-top-bar-bg: var(--topbar-background);
+  --sanadi-top-bar-text: var(--topbar-text);
+  --sanadi-floating-menu-bg: var(--sanadi-top-bar-bg);
+  --sanadi-floating-menu-icon: var(--sanadi-text-color);
+  --sanadi-header-bg: var(--sanadi-top-bar-bg);
+
+  /* Cards and Autocomplete */
+  --sanadi-card-bg: #FFFFFF;
+  --sanadi-autocomplete-input-bg: var(--sanadi-card-bg);
+  --sanadi-autocomplete-suggestion-highlight: #EAEAEA;
+
+  /* Charts */
+  --sanadi-chart-line: var(--sanadi-primary-btn);
+  --sanadi-chart-bar: var(--sanadi-secondary-btn);
+  --sanadi-chart-pie: var(--sanadi-tertiary-btn);
+
+
+
+  /* Footer */
+  --sanadi-footer-bg: var(--footer-bg);
+  --sanadi-footer-text: var(--footer-text);
+
+  /* Table Header and Form Input */
+  --sanadi-table-header-bg: var(--sanadi-top-bar-bg);
+  --sanadi-form-input-bg: var(--sanadi-card-bg);
+  --sanadi-form-input-border: #BDC3C7;
+
+  /* Floating Action Button (FAB) */
+  --sanadi-fab-bg-color: var(--color-3);
+  --sanadi-fab-icon-color: var(--white);
+
+  /* Body Background */
+  --sanadi-body-bg-color: var(--sanadi-card-bg);
+
+  /* Badge */
+  --sanadi-badge-bg-color: var(--sanadi-fab-bg-color);
+  --sanadi-badge-text-color: var(--sanadi-text-color);
+
+}

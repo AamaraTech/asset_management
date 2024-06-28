@@ -1,0 +1,21 @@
+p-panel{
+    // flex flex-column h-full w-full
+
+    // flex flex-column h-full ng-tns-c1141093477-1 p-component p-panel w-full
+    .p-component.p-panel{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    .p-toggleable-content{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        flex-grow: 1 !important;
+
+        .p-panel-content{
+            flex-grow: 1 !important;
+        }
+    }
+}

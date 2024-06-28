@@ -1,0 +1,56 @@
+<div class="form-container flex justify-content-center align-items-center">
+    <div class="flex-grow-1"></div>
+    <div class="flex-grow-1 flex align-items-center justify-content-center">
+        <div class="flex-grow-1"></div>
+        <div class="flex-grow-1 flex align-items-center justify-content-center">
+            <form class="w-full" [formGroup]="loginForm" (submit)="submitHandler()">
+                <div class="flex flex-column gap-4">
+                    <div class="email">
+                        <!-- <label for="email">{{'email_TC' | translate}}</label> -->
+                        <div class="p-inputgroup">
+                            <input class="w-full" id="email" formControlName="email" type="text"
+                                placeholder="{{'userName_TC' | translate}}" pInputText required>
+                            <span class="p-inputgroup-addon">
+                                <i class="pi pi-user"></i>
+                            </span>
+                        </div>
+                        <!-- <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
+                                    <small *ngIf="email.errors?.required">{{ 'emailRequired_TC' | translate }}</small>
+                                    <small class="invalid-feedback" *ngIf="email.errors?.email">{{ 'emailValid_TC' | translate }}</small>
+                                </div> -->
+                    </div>
+                    <div class="password">
+                        <!-- <label for="password">{{'password_TC' | translate}}</label> -->
+
+                        <div class="p-inputgroup">
+                            <input class="w-full" id="password" [type]="showEyeIcon ? 'password' : 'text'"
+                                formControlName="password" pInputText placeholder="{{'password_TC' | translate}}"
+                                required>
+                            <span *ngIf="showEyeIcon" (click)="toggleIcon()" class="p-inputgroup-addon">
+                                <i class="pi pi-eye"></i>
+                            </span>
+                            <span *ngIf="!showEyeIcon" (click)="toggleIcon()" class="p-inputgroup-addon">
+                                <i class="pi pi-eye-slash"></i>
+                            </span>
+                        </div>
+                        <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched" class="text-red-500">
+                            <small *ngIf="loginForm.get('password').errors['required']">{{ 'passwordRequired_TC' | translate }}</small>
+                            <small *ngIf="loginForm.get('password').errors['minlength']">{{ 'passwordMinlength_TC' | translate }}</small>
+                            <small *ngIf="loginForm.get('password').errors['maxlength']">{{ 'passwordMaxlength_TC' | translate }}</small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="w-full p-button-success primary" pButton pRipple
+                            label="{{ 'signIn_TC' | translate}}" [disabled]="!loginForm.valid"></button>
+                    </div>
+                    <div class="flex flex-row justify-content-end">
+                        <a class="forgot-pwd">{{'forgotPassword_TC' | translate}}?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="flex-grow-1"></div>
+    </div>
+    <div class="flex-grow-1"></div>
+</div>

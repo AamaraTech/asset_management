@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "asset-manage-backend-chart.fullname" . }}-test-connection"
+  labels:
+    {{- include "asset-manage-backend-chart.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "asset-manage-backend-chart.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

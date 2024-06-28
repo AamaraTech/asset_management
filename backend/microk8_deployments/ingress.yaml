@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: amigo-ams-app-app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+spec:
+  rules:
+  - host: amigo-assetmanagement.craftyouridea.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: amigo-ams-app-app-service
+            port:
+              number: 80

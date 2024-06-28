@@ -1,0 +1,23 @@
+.p-toolbar {
+    background: var(--sanadi-top-bar-bg) !important;
+    padding: .4rem 1.25rem !important;
+    border: none !important;
+    border-radius: 0px !important;
+    color: var(--sanadi-top-bar-text) !important;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.p-toolbar .p-button.p-button-icon-only {
+    /* border-radius: 2rem !important; */
+    background: var(--sanadi-top-bar-bg) !important;
+    border: none !important;
+    /* color: var(--sanadi-fab-icon-color) !important; */
+}
+
+
+.p-dataview.p-component > .p-dataview-header,
+.p-dataview .p-dataview-content{
+    background: inherit !important;
+    color: inherit !important;
+}

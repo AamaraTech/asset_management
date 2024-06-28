@@ -1,0 +1,5 @@
+/* Card */
+.card {
+    background: transparent !important;
+    border: 1px solid var(--sanadi-card-border) !important;
+}

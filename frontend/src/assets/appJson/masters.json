@@ -1,0 +1,22 @@
+{
+    "masters": [
+        {
+            "label": "unitMaster_TC",
+            "routerLink": "/master/unitMaster",
+            "showModifier": "showUnitMasterModifier",
+            "apiUrl": "UNIT_MASTER_CRUD",
+            "showCount": true,
+            "showCreate": true,
+            "showExport": true
+        },
+        {
+            "label": "warehouseCreation_TC",
+            "routerLink": "/wareshouse/warehouse-creation",
+            "showModifier": "showWareHouseCreationModifier",
+            "apiUrl": "WAREHOUSE_CREATION_CRUD",
+            "showCount": true,
+            "showCreate": true,
+            "showExport": true
+        }
+    ]
+}

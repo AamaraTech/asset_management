@@ -1,0 +1,53 @@
+/* Button Themes */
+
+.p-button:not(.p-button-outlined, p-dataviewlayoutoptions .p-dataview-layout-options .p-button) {
+    border: var(--sanadi-button-border);
+    background-color: var(--color-3);
+}
+
+.p-button.primary {
+    background-color: var(--sanadi-primary-btn) !important;
+    color: var(--primary-button-text) !important;
+    cursor: pointer !important;
+}
+
+.p-button.secondary {
+    background-color: transparent !important;
+    color: var(--secondary-button-text) !important;
+    border: 1px solid var(--sanadi-secondary-btn);
+}
+
+.p-button.tertiary {
+    background-color: var(--sanadi-tertiary-btn) !important;
+}
+
+/* Button Hover State */
+
+.p-button:hover {
+    opacity: 0.9;
+}
+
+.p-button.primary:hover {
+    background-color: var(--sanadi-primary-btn) !important;
+
+}
+
+/* .p-button.secondary:hover {
+    background-color: transparent !important;
+    color: var(--white) !important;
+} */
+
+.p-button.tertiary:hover {
+    background-color: var(--sanadi-tertiary-btn) !important;
+}
+
+.p-button.p-button-rounded {
+    border-radius: 2rem !important;
+    background: var(--sanadi-fab-bg-color) !important;
+    color: var(--sanadi-fab-icon-color) !important;
+    border: transparent !important;
+}
+
+.p-button:enabled:focus, .p-button.p-button-success:enabled:focus {
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--color-4), 0 1px 2px 0 black;
+}

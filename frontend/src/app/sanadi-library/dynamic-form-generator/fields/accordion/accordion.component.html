@@ -1,0 +1,14 @@
+<p-accordion [multiple]="false" [activeIndex]="0">
+    <ng-container *ngFor="let field of fields">
+        <p-accordionTab header="{{field.accordionHeader}}">
+            <div class="flex flex-row gap-3 flex-wrap">
+                <ng-container *ngFor="let accordionField of field.fields">
+                    <div class="flex" [style.width]="accordionField.fieldWidth">
+                        <dynamic-field-builder class="w-full" [field]="accordionField" 
+                            [form]="form"></dynamic-field-builder>
+                    </div>
+                </ng-container>
+            </div>
+        </p-accordionTab>
+    </ng-container>
+</p-accordion>

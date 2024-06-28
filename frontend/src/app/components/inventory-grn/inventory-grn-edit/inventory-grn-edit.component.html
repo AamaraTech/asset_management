@@ -1,0 +1,102 @@
+<form [formGroup]="form">
+    <div class="h-full flex flex-column px-3 justify-content-between">
+        <div>
+            <p-tabView>
+                <p-tabPanel header="{{ 'grn_details_TC' | translate}}">
+                    <div>
+                        <p-accordion [activeIndex]="0">
+                            <p-accordionTab header="{{ 'grn_Info_TC' | translate}}">
+                                <div class="flex flex-column gap-3">
+
+                                    <div class="flex flex-row justify-content-between gap-3">
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="formFields().grn_no"></sanadi-input>
+                                        <date class="flex-grow-1" [form]="form" [field]="formFields().grn_date"></date>
+                                        <dropdown class="flex-grow-1" [form]="form" [field]="formFields().source">
+                                        </dropdown>
+                                        @if(isPoDropDownVisible()){
+                                        <dropdown class="flex-grow-1" [form]="form" [field]="formFields().purchase_order">
+                                        </dropdown>
+                                        }
+
+                                    </div>
+
+                                    <div class="flex flex-row justify-content-between gap-3">
+                                        <!-- <dropdown class="flex-grow-1" [form]="form"
+                                            [field]="formFields().vendor"></dropdown> -->
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="formFields().vendor_bill"></sanadi-input>
+                                        <date class="flex-grow-1" [form]="form" [field]="formFields().vendor_bill_date"></date>
+
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="formFields().vendor_address"></sanadi-input>
+                                    </div>
+
+                                    <div class="flex flex-row justify-content-between gap-3">
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="formFields().other_ref_no"></sanadi-input>
+
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="formFields().batch_no"></sanadi-input>
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="formFields().note"></sanadi-input>
+                                    </div>
+
+                                </div>
+                            </p-accordionTab>
+                            <p-accordionTab header="{{ 'vehicle_details_TC' | translate}}">
+                                <div class="flex flex-column gap-3">
+
+                                    <div class="flex flex-row justify-content-between gap-3">
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="formFields().vehicle_no"></sanadi-input>
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="formFields().arrive_date"></sanadi-input>
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="formFields().exit_date"></sanadi-input>
+                                        <sanadi-input class="flex-grow-1" [form]="form"
+                                            [field]="formFields().remarks"></sanadi-input>
+                                    </div>
+                                </div>
+                            </p-accordionTab>
+                        </p-accordion>
+
+                    </div>
+                </p-tabPanel>
+                <p-tabPanel header="{{ 'addProducts_TC' | translate}}">
+                    <div>
+                        @defer{
+                            <table-field [form]="form" [columnSchema]="tableField?.columnSchema" [field]="tableField"
+                            [formName]="tableField?.name" [formSchema]="tableField?.formSchema"
+                            [dataSource]="tableField?.dataSource" [formInitialise]="tableField?.formInitialise"
+                            [dataKey]="tableField?.dataKey" [scrollHeight]="tableField?.scrollHeight"
+                            [hideButton]="tableField?.hideButton" [hideFrozenColumn]="tableField?.hideFrozenColumn">
+                        </table-field>
+                        }
+                        
+                    </div>
+                </p-tabPanel>
+            </p-tabView>
+
+        </div>
+
+        <div class="flex flex-row justify-content-between py-5">
+            <div>
+                <!-- @if(tabIndex()){
+                @if(tabIndex()?.index > 0){
+                <button pButton label="Previous" class="primary" (click)="previousTab()"></button>
+                }
+                @if(tabIndex()?.index !== tabIndex()?.tabsLength - 1){
+                <button pButton label="Next" class="primary" (click)="nextTab()"></button>
+
+                }
+                } -->
+            </div>
+
+            <div>
+                <button pButton label="Cancel" class="secondary" (click)="cancel()"></button>
+                <button pButton label="Save" class="primary" (click)="saveForm()"></button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,23 @@
+
+
+.p-scrollpanel.sanadi-scroll .p-scrollpanel-bar-y {
+    background-color: var(--color-3);
+    opacity: 1;
+
+}
+
+.p-scrollpanel-bar.p-scrollpanel-bar-y {
+    right: 0 !important;
+}
+
+.p-scrollpanel-bar-x {
+    display: none !important;
+}
+
+.p-scrollpanel-content {
+    padding: 0 !important;
+}
+
+.p-scroller {
+    width: 100% !important;
+}

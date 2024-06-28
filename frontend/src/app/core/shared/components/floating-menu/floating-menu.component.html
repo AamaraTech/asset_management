@@ -1,0 +1,9 @@
+<button class="p-link layout-menu-button layout-topbar-button floatable-button" pDraggable (click)="display = true">
+    <i class="pi pi-qrcode"></i>
+</button>
+
+<p-sidebar [(visible)]="display" position="right"
+    [style]="{'width': '15rem','max-height': '90vh','height': 'auto',  'top': '50%', 'transform': 'translate(0%, -50%)', 'border-radius': '20px 0px 0px 20px'}"
+    [baseZIndex]="1000">
+    <app-menu-list (emitter)="closeMenu($event)"></app-menu-list>
+</p-sidebar>

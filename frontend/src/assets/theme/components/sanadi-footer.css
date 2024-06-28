@@ -1,0 +1,4 @@
+.p-panel .p-panel-footer{
+    background: var(--sanadi-footer-bg) !important;
+    color: var(--sanadi-footer-text) !important;
+}
